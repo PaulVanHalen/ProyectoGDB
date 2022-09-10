@@ -9,6 +9,6 @@
 
 >Link del video de presentación: 
 
->>Texto redactado con Sintaxis Markdown
+**Texto redactado con Sintaxis Markdown**
 
 
