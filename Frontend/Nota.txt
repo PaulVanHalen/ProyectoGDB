@@ -1,0 +1,1 @@
+Crear el proyecto de Angular y agregar en git.ignore las carpetas que no son necesarias subir a la nube.
