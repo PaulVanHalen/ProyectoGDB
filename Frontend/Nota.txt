@@ -1,1 +1,4 @@
 Crear el proyecto de Angular y agregar en git.ignore las carpetas que no son necesarias subir a la nube.
+
+El archivo se comenta con #
+Ya se agregó node_modules en el archivo
