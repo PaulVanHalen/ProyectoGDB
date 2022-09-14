@@ -1,4 +1,6 @@
-Crear el proyecto de Angular y agregar en git.ignore las carpetas que no son necesarias subir a la nube.
+Revisar git.ignore en cuanto a las carpetas que no son necesarias subir a la nube.
 
 El archivo se comenta con #
-Ya se agregó node_modules en el archivo
+Ya se agregó node_modules en el archivo. La carpeta de angular ademas incluye un archivo .gitignore.
+En total hay 2, uno que se puede usar en general y otro para Angular especificamente (asi evitamos que pese mucho)
+
