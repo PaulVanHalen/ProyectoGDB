@@ -10,15 +10,15 @@ import { PagesModule } from './pages/pages.module';
 
 const rutas:Routes=[
 {path:'',component:InicioComponent},
-{path:'libros',component:LibrosComponent},
+/*{path:'libros',component:LibrosComponent},
 {path:'registro',component:RegistroComponent},
-{path:'ingresar',component:IngresarComponent},
+{path:'ingresar',component:IngresarComponent},*/
 
 ];
 
 @NgModule({
   declarations: [
-    AppComponent, Libros,
+    AppComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InicioComponent } from './inicio/inicio.component';
+import { LibrosComponent } from './libros/libros.component';
 
 
 
 @NgModule({
   declarations: [
-    InicioComponent
+    InicioComponent,
+    LibrosComponent,
   ],
   imports: [
     CommonModule
