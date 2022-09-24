@@ -12,6 +12,9 @@ import { LibrosComponent } from './libros/libros.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports:[
+    InicioComponent,LibrosComponent
   ]
 })
 export class PagesModule { }
