@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { Libros } from './libros/libros.component';
+import { Libros } from './pages/libros/libros.component';
 
 @NgModule({
   declarations: [
