@@ -1,7 +1,17 @@
 main{
   display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .texto{
   font-size: xx-large;
+  letter-spacing: 4px;
+}
+
+img{
+  width: 40%;
+  height: 90vh;
 }
