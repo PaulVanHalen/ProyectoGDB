@@ -1,0 +1,33 @@
+.galeria li{
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    vertical-align: top;
+    /* El vertical aca lo uso porque es necesario que los titulos respeten una alineacion */
+    background-color: rgb(248, 248, 248);
+    margin: 10px 1.5%;
+    padding: 2px 1px;
+}
+
+.galeria {
+    width: 940px;
+    margin: 0px auto;
+}
+
+.galeria h2{
+    font-size: 25px;
+    font-weight: bold;
+
+}
+
+.galeria img {
+    width: 250px;
+    height: 350px;
+    padding: 5px;
+}
+
+.pagina{
+font-size: 18px;
+font-weight: bold;
+margin-top: 5px;
+}
