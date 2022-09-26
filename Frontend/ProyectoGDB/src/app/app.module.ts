@@ -9,6 +9,8 @@ import { LayoutsModule } from './layouts/layouts.module';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { LibrosComponent } from './pages/libros/libros.component';
 import { PagesModule } from './pages/pages.module';
+import { UsuariosService } from './services/usuarios.service';
+import { HttpClientModule } from '@angular/common/http';
 
 const rutas:Routes=[
 {path:'',component:InicioComponent},
@@ -28,8 +30,9 @@ const rutas:Routes=[
     LayoutsModule,
     PagesModule,
     RouterModule.forRoot(rutas),
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [UsuariosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
