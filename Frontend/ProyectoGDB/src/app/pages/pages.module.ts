@@ -5,8 +5,6 @@ import { LibrosComponent } from './libros/libros.component';
 import { RegistroComponent } from './registro/registro.component';
 import { IngresarComponent } from './ingresar/ingresar.component';
 
-
-
 @NgModule({
   declarations: [
     InicioComponent,
@@ -15,7 +13,7 @@ import { IngresarComponent } from './ingresar/ingresar.component';
     IngresarComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports:[
     InicioComponent,LibrosComponent

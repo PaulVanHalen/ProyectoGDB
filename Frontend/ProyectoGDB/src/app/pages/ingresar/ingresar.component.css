@@ -1,0 +1,12 @@
+.contenedor{
+  max-width: 330px;
+  margin: 10px auto;
+  padding: 28px;
+  text-align: center;
+}
+
+img{
+  display: block;
+  margin: 20px auto;
+  height: 130px;
+}

@@ -11,14 +11,10 @@ import { LibrosComponent } from './pages/libros/libros.component';
 import { PagesModule } from './pages/pages.module';
 import { UsuariosService } from './services/usuarios.service';
 import { HttpClientModule } from '@angular/common/http';
+import { RegistroComponent } from './pages/registro/registro.component';
+import { IngresarComponent } from './pages/ingresar/ingresar.component';
 
-const rutas:Routes=[
-{path:'',component:InicioComponent},
-{path:'libros',component:LibrosComponent},/*
-{path:'registro',component:RegistroComponent},
-{path:'ingresar',component:IngresarComponent},*/
-
-];
+const rutas:Routes=[];
 
 @NgModule({
   declarations: [
