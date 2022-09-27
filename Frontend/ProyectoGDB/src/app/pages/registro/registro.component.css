@@ -1,0 +1,78 @@
+/*titulos formulario de registro de usuario*/
+  
+h1{
+    font-family: 'Kanit', sans-serif;
+    margin-top: 1rem;
+    text-align: center;
+    text-shadow: 2px 2px #ABABAB;
+  }
+  
+  h3{
+    
+    font-family: 'Kanit', sans-serif;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+ }
+ /*campos del formulario*/
+  p{
+    margin-top: 1rem;
+    font-size:medium;
+    font-family: 'Kanit', sans-serif;
+    text-align: 60%;
+    font-weight: 600;
+    width: 250%;
+    margin-left: 75%;
+  }
+  
+  em{
+    background-color: #FFB366;
+  }
+  
+  input {
+    font-size: large;
+    font-weight: 400;
+    width: 70%; 
+    border-radius: 10px; 
+    margin-left: 15%;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  option{
+    text-align: center;
+    font-weight: 600;
+    width: 100%;
+  }
+  
+  form{
+    border-style:outset;
+    border-color: #7a440e;
+    width: 50%;
+    margin-bottom: 2rem;
+    margin-left: 25%;
+    text-align: center;
+  }
+  /*Botones W and H con % hasta solucioar responsive*/
+  button{
+    background-color: #7a440e;
+    border-radius: 10px;
+    border-color: #945210;
+    border-width: 1px;
+    font-family: 'Kanit', sans-serif;
+    font-size: 150%;
+    font-weight: bold;
+    width: 25%;
+    height: 10%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+  
+  button:hover{
+    background-color: rgb(206, 129, 36);
+    cursor: pointer;
+  }
+  
+ 

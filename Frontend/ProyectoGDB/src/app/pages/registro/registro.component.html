@@ -1,2 +1,107 @@
+<h1>Formulario de registro</h1>
 
-<p>registro works!</p>
+<form [formGroup]="RegistroForm" (ngSubmit)="onSubmit()" novalidate>
+        
+    <h4>Nombre*</h4>
+    <input type="text" class="form-control" formControlName="nombre" id="nombre"  
+    [ngClass]="{ 'is-invalid': submitted &&f['nombre'].errors }" > 
+        
+    <div *ngIf="submitted && f['nombre'].errors" class="invalid-feedback"
+    class="col-sm-3 text-danger">
+    
+    <div *ngIf = "nombre?.errors?.['required']">
+        <p>Ingrese su nombre</p>
+    </div>
+    </div>
+
+    <h4>Apellido*</h4>
+    <input type="text" class="form-control" formControlName="apellido" id="apellido"  
+    [ngClass]="{ 'is-invalid': submitted &&f['apellido'].errors }" > 
+      
+    <div *ngIf="submitted && f['apellido'].errors" class="invalid-feedback"
+     class="col-sm-3 text-danger">
+    <div *ngIf = "apellido?.errors?.['required']">
+    <p>Ingrese su apellido</p>
+    </div>
+    </div>
+
+    <h4>Documento*</h4>
+    <input type="number" class="form-control" formControlName="documento" id="documento"  
+    [ngClass]="{ 'is-invalid': submitted &&f['apellido'].errors }" > 
+      
+    <div *ngIf="submitted && f['documento'].errors" class="invalid-feedback"
+     class="col-sm-3 text-danger">
+    <div *ngIf = "documento?.errors?.['required']">
+    <p>Ingrese su documento de identidad</p>    
+    </div>
+    </div>
+
+    <h4>Fecha de Nacimiento</h4>
+    <input type="date" class="form-control" formControlName="fechaNacimiento" id="fechaNacimiento"  
+    [ngClass]="{ 'is-invalid': submitted &&f['fechaNacimiento'].errors }" > 
+      
+    <div *ngIf="submitted && f['fechaNacimiento'].errors" class="invalid-feedback"
+     class="col-sm-3 text-danger">
+    <div *ngIf = "fechaNacimiento?.errors?.['required']">
+    <p>Ingrese su fecha de nacimiento</p>    
+    </div>
+    </div> 
+
+    <h4>Domicilio</h4>
+    <input type="text" class="form-control" formControlName="domicilio" id="domicilio"  
+    [ngClass]="{ 'is-invalid': submitted &&f['domicilio'].errors }" > 
+      
+    <div *ngIf="submitted && f['domicilio'].errors" class="invalid-feedback"
+     class="col-sm-3 text-danger">
+    <div *ngIf = "domicilio?.errors?.['required']">
+    <p>Ingrese su domicilio</p>  
+    </div>
+    </div>
+
+    <h4>Correo Electrónico*</h4>
+    <input type="email" class="form-control" formControlName="email" id="email"  
+    [ngClass]="{ 'is-invalid': submitted &&f['email'].errors }" > 
+      
+    <div *ngIf="submitted && f['email'].errors" class="invalid-feedback"
+     class="col-sm-3 text-danger">
+    <div *ngIf = "email?.errors?.['required']">
+    <p>Ingrese su correo electrónico</p> 
+    </div>
+    </div>
+
+    <h4>Confirmar Correo Electrónico*</h4>
+    <input type="email" class="form-control" formControlName="confirmarEmail" id="email"  
+    [ngClass]="{ 'is-invalid': submitted &&f['confirmarEmail'].errors }" > 
+      
+    <div *ngIf="submitted && f['confirmarEmail'].errors" class="invalid-feedback"
+     class="col-sm-3 text-danger">
+    <div *ngIf = "confirmarEmail?.errors?.['required']">
+    <p>El correo electrónico no coincide con el ingresado</p> 
+    </div>
+    </div>
+
+    <h4>Constraseña(8 caracteres)*</h4>
+    <input type="password" class="form-control" formControlName="password" id="password" 
+    [ngClass]="{ 'is-invalid': submitted &&f['password'].errors }" > 
+      
+    <div *ngIf="submitted && f['password'].errors" class="invalid-feedback"
+     class="col-sm-3 text-danger">
+    <div *ngIf = "password?.errors?.['required']">
+    <p>Ingrese una contraseña válida</p>
+    </div>
+    </div>
+
+    <h4>Confirmar Constraseña*</h4>
+    <input type="password" class="form-control" formControlName="confirmarPassword" id="confirmarPassword" 
+    [ngClass]="{ 'is-invalid': submitted &&f['confirmarPassword'].errors }" > 
+      
+    <div *ngIf="submitted && f['confirmarPassword'].errors" class="invalid-feedback"
+     class="col-sm-3 text-danger">
+    <div *ngIf = "confirmarPassword?.errors?.['required']">
+    <p>La contraseña no coincide con la ingresada</p>
+    </div>
+    </div>
+
+    <button type="submit" class="btn btn-success btn-block">Guardar</button>
+
+    </form>
