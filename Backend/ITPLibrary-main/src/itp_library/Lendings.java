@@ -80,11 +80,11 @@ public class Lendings extends javax.swing.JPanel {
         Text2.setText("Folio Usuario");
         add(Text2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 50, -1, -1));
 
-        jSeparator1.setForeground(new java.awt.Color(0, 153, 255));
+        jSeparator1.setForeground(new java.awt.Color(125, 11, 193));
         jSeparator1.setPreferredSize(new java.awt.Dimension(200, 10));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 210, 260, 10));
 
-        jSeparator2.setForeground(new java.awt.Color(0, 153, 255));
+        jSeparator2.setForeground(new java.awt.Color(125, 11, 193));
         jSeparator2.setPreferredSize(new java.awt.Dimension(200, 10));
         add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, 260, 10));
 
@@ -93,7 +93,6 @@ public class Lendings extends javax.swing.JPanel {
         jSeparator3.setPreferredSize(new java.awt.Dimension(200, 10));
         add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 10, 350));
 
-        book_id.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         book_id.setForeground(new java.awt.Color(102, 102, 102));
         book_id.setText("Ingrese el ID del Libro a prestar");
         book_id.setBorder(null);
@@ -109,7 +108,6 @@ public class Lendings extends javax.swing.JPanel {
         });
         add(book_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 180, 260, 30));
 
-        folio.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         folio.setForeground(new java.awt.Color(102, 102, 102));
         folio.setText("Ingrese el folio del usuario");
         folio.setBorder(null);
@@ -120,8 +118,8 @@ public class Lendings extends javax.swing.JPanel {
         });
         add(folio, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 80, 260, 30));
 
-        button.setBackground(new java.awt.Color(18, 90, 173));
-        button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        button.setBackground(new java.awt.Color(98, 8, 152));
+        button.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         button.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonMouseEntered(evt);
@@ -144,10 +142,10 @@ public class Lendings extends javax.swing.JPanel {
         add(button, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, 260, 50));
 
         Image.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/itp_library/images/prestamo.gif"))); // NOI18N
+        Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/itp_library/images/prestamo.png"))); // NOI18N
         Image.setMaximumSize(new java.awt.Dimension(750, 430));
         Image.setMinimumSize(new java.awt.Dimension(750, 430));
-        add(Image, new org.netbeans.lib.awtextra.AbsoluteConstraints(-180, -140, -1, -1));
+        add(Image, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 450, 360));
     }// </editor-fold>//GEN-END:initComponents
 
     private void book_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book_idActionPerformed
@@ -233,10 +231,10 @@ public class Lendings extends javax.swing.JPanel {
     }//GEN-LAST:event_buttonMousePressed
 
     void setColor(JPanel panel){
-        panel.setBackground(new Color(21,101,192));
+        panel.setBackground(new Color(98,8,152));
     }
     void resetColor(JPanel panel){
-        panel.setBackground(new Color(18,90,173));
+        panel.setBackground(new Color(125,11,193));
     }
     
     public boolean UserExist(int id) throws SQLException{

@@ -120,8 +120,8 @@ public class Reports extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 750, 330));
 
-        button.setBackground(new java.awt.Color(18, 90, 173));
-        button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        button.setBackground(new java.awt.Color(98, 8, 152));
+        button.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         button.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonMouseEntered(evt);
@@ -178,10 +178,10 @@ public class Reports extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabel1MousePressed
 
     void setColor(JPanel panel){
-        panel.setBackground(new Color(21,101,192));
+        panel.setBackground(new Color(98,8,152));
     }
     void resetColor(JPanel panel){
-        panel.setBackground(new Color(18,90,173));
+        panel.setBackground(new Color(125,11,193));
     }
     
     private void GetReports() throws SQLException{
