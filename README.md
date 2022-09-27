@@ -11,4 +11,5 @@
 
 **Texto redactado con Sintaxis Markdown**
 
+<Nota: el archivo gitignore para la carpeta dist fue eliminada, netbeans me la ha creado automaticamente, tal vez por razones de seguridad>
 
