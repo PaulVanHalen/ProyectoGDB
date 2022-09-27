@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ReactiveFormsModule, FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-registro',
@@ -7,9 +8,82 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  RegistroForm!: FormGroup;
+  submitted = false;
+  constructor(private fb: FormBuilder) {
+    this.createForm();
   }
+    
+  createForm() {
+    this.RegistroForm = this.fb.group({
+                        nombre:            ['',  [Validators.required]],
+                        apellido:          ['',  [Validators.required]],
+                        documento:         ['',  [Validators.required]],
+                        fechaNacimiento:   ['',  [Validators.nullValidator]],
+                        domicilio:         ['',  [Validators.maxLength(200)]],
+                        telefono:          ['',  [Validators.maxLength(10)]],
+                        email:             ['',  [Validators.required, Validators.email]],
+                        confirmarEmail:    ['',  [Validators.required, Validators.email]],
+                        password:          ['',  [Validators.required, Validators.maxLength(8)]],
+                        confirmarPassword: ['',  [Validators.required, Validators.maxLength(8)]]
+        
+      });
 
+    this.RegistroForm.controls["nombre"].valueChanges.subscribe(data => {
+        console.log(data);
+                  });
+    this.RegistroForm.controls["apellido"].valueChanges.subscribe(data => {
+                    console.log(data);
+                  });
+    this.RegistroForm.controls["documento"].valueChanges.subscribe(data => {
+                    console.log(data);
+                  });
+    this.RegistroForm.controls["fechaNacimiento"].valueChanges.subscribe(data => {
+                    console.log(data);
+                  });
+    this.RegistroForm.controls["domicilio"].valueChanges.subscribe(data => {
+                    console.log(data);
+                  });
+    this.RegistroForm.controls["telefono"].valueChanges.subscribe(data => {
+                    console.log(data);
+                  });
+    this.RegistroForm.controls["email"].valueChanges.subscribe(data => {
+                    console.log(data);
+                  });
+    this.RegistroForm.controls["confirmarEmail"].valueChanges.subscribe(data => {
+                    console.log(data);
+                  });
+    this.RegistroForm.controls["password"].valueChanges.subscribe(data => {
+                    console.log(data);
+                  });
+    this.RegistroForm.controls["confirmarPassword"].valueChanges.subscribe(data => {
+                    console.log(data);
+                  });
+    }
+                            
+    onSubmit() {
+      this.submitted = true;
+       if (this.RegistroForm.invalid) {
+        return;
+        }
+          }
+          
+  get nombre() { return this.RegistroForm.get('nombre') }
+  get apellido() { return this.RegistroForm.get('apellido') }
+  get documento() { return this.RegistroForm.get('documento') }
+  get fechaNacimiento() { return this.RegistroForm.get('fechaNacimiento') }
+  get domicilio() { return this.RegistroForm.get('domicilio') }
+  get telefono() { return this.RegistroForm.get('telefono') }
+  get email() { return this.RegistroForm.get('email') }
+  get confirmarEmail() { return this.RegistroForm.get('confirmarEmail') }
+  get password() { return this.RegistroForm.get('password') }
+  get confirmarPassword() { return this.RegistroForm.get('confirmarPassword') }
+  get f() {return this.RegistroForm.controls; }
+
+  ngOnInit() {}                               
+  
+    
+
+    
+    
 }

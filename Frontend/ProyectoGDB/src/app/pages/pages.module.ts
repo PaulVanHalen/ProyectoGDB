@@ -4,6 +4,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { LibrosComponent } from './libros/libros.component';
 import { RegistroComponent } from './registro/registro.component';
 import { IngresarComponent } from './ingresar/ingresar.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { IngresarComponent } from './ingresar/ingresar.component';
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule
   ],
   exports:[
     InicioComponent,LibrosComponent

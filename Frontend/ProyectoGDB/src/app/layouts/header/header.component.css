@@ -5,7 +5,7 @@ nav{
   justify-content: space-evenly;
   align-items: center;
   height: 70px;
-  border-radius: 20%;
+  border-radius: 10%;
 }
 
 ul{
@@ -21,16 +21,19 @@ li{
 }
 
 a{
-  color:#2E4053 ;
+  color:#212e3a ;
   font-family: 'Kanit', sans-serif;
-  font-size: larger;
+  font-size: 30px;
   font-weight: 600;
   text-decoration: none;
+  text-shadow: 0.5px 0.5px #ABABAB;
 }
 
 a:hover{
   color: rgb(218, 207, 190);
-  font-size: medium;
+  font-size: 30px;
+  font-weight: 600;
+  text-shadow: 0.5px 0.5px #5a5757;
 }
 
 @media (max-width:725px){
