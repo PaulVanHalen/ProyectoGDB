@@ -33,12 +33,13 @@ public class Principal extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        Image = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        Image = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -52,27 +53,23 @@ public class Principal extends javax.swing.JPanel {
 
         Title.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         Title.setText("Bienvenido");
-        add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
         Text1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Text1.setText("Sistema de Gestión para Biblioteca Pública. Controle y administre de");
-        add(Text1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
+        Text1.setText("Bienvenidos a nuestra Biblioteca Virtual,");
+        add(Text1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel1.setText("forma óptima y fácil el flujo de préstamos y devoluciones de Libros. ");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+        jLabel1.setText("donde podrás consultar nuestro catálogo de Libros.");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setText("Esta herramienta le permitirá llevar un control completo y detallado de su Biblioteca,");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
+        jLabel2.setText("Además vas a poder reservar cualquiera de nuestros Libros y tenerlo hasta un máximo de 15 días.");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel3.setText("tendrá acceso a herramientas especiales para tareas específicas, como lo son:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
-
-        Image.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/itp_library/images/336799ebb339821f342bc5a13386aff2.jpg"))); // NOI18N
-        add(Image, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 80, -1, -1));
+        jLabel3.setText("No olvides ir a la sección \"Registro\" y completar nuestro formulario.");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel4.setText("• Sección de Reportes de acciones en el sistema");
@@ -81,6 +78,10 @@ public class Principal extends javax.swing.JPanel {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel5.setText("• Préstamos");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 170, -1));
+
+        Image.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/itp_library/images/336799ebb339821f342bc5a13386aff2.png"))); // NOI18N
+        add(Image, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 120, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel6.setText("• Devoluciones");
@@ -94,6 +95,10 @@ public class Principal extends javax.swing.JPanel {
         jLabel8.setText("• Edición de Usuarios y Libros existentes");
         add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 330, -1));
 
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel10.setText("Una vez llenado vas a poder disfrutar de nuestro servicio. ");
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
+
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel9.setText("• Eliminar todo tipo de Registros");
         add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 330, -1));
@@ -106,6 +111,7 @@ public class Principal extends javax.swing.JPanel {
     private javax.swing.JLabel Title;
     private javax.swing.JPanel body;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

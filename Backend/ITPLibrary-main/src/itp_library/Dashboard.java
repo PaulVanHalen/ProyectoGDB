@@ -27,8 +27,8 @@ public class Dashboard extends javax.swing.JFrame {
         int year = now.getYear();
         int dia = now.getDayOfMonth();
         int month = now.getMonthValue();
-        String[] meses = {"Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto"," ;Septiembre"
-            ,"Octubre","Noviembre","Diciemrbre"};
+        String[] meses = {"Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre"
+            ,"Octubre","Noviembre","Diciembre"};
         fecha.setText("Hoy es "+dia+" de "+meses[month - 1]+" de "+year);
         
         Principal p1 = new Principal();
@@ -96,11 +96,11 @@ public class Dashboard extends javax.swing.JFrame {
         Background.setBackground(new java.awt.Color(255, 255, 255));
         Background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Menu.setBackground(new java.awt.Color(13, 71, 161));
+        Menu.setBackground(new java.awt.Color(108, 11, 166));
         Menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btn_prin.setBackground(new java.awt.Color(21, 101, 192));
-        btn_prin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_prin.setBackground(new java.awt.Color(130, 13, 196));
+        btn_prin.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_prin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_prinMouseEntered(evt);
@@ -125,8 +125,8 @@ public class Dashboard extends javax.swing.JFrame {
 
         Menu.add(btn_prin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 270, 50));
 
-        btn_returns.setBackground(new java.awt.Color(18, 90, 173));
-        btn_returns.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_returns.setBackground(new java.awt.Color(130, 13, 196));
+        btn_returns.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_returns.setPreferredSize(new java.awt.Dimension(270, 51));
         btn_returns.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -152,8 +152,8 @@ public class Dashboard extends javax.swing.JFrame {
 
         Menu.add(btn_returns, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, -1, -1));
 
-        btn_users.setBackground(new java.awt.Color(18, 90, 173));
-        btn_users.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_users.setBackground(new java.awt.Color(130, 13, 196));
+        btn_users.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_users.setPreferredSize(new java.awt.Dimension(270, 51));
         btn_users.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -179,8 +179,8 @@ public class Dashboard extends javax.swing.JFrame {
 
         Menu.add(btn_users, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, -1, -1));
 
-        btn_books.setBackground(new java.awt.Color(18, 90, 173));
-        btn_books.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_books.setBackground(new java.awt.Color(130, 13, 196));
+        btn_books.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_books.setPreferredSize(new java.awt.Dimension(270, 51));
         btn_books.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -206,8 +206,8 @@ public class Dashboard extends javax.swing.JFrame {
 
         Menu.add(btn_books, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, -1, -1));
 
-        btn_reports.setBackground(new java.awt.Color(18, 90, 173));
-        btn_reports.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_reports.setBackground(new java.awt.Color(130, 13, 196));
+        btn_reports.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_reports.setPreferredSize(new java.awt.Dimension(270, 51));
         btn_reports.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -233,8 +233,8 @@ public class Dashboard extends javax.swing.JFrame {
 
         Menu.add(btn_reports, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, -1, -1));
 
-        btn_lends.setBackground(new java.awt.Color(18, 90, 173));
-        btn_lends.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_lends.setBackground(new java.awt.Color(130, 13, 196));
+        btn_lends.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_lends.setPreferredSize(new java.awt.Dimension(270, 51));
         btn_lends.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -262,15 +262,15 @@ public class Dashboard extends javax.swing.JFrame {
 
         app_name.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         app_name.setForeground(new java.awt.Color(255, 255, 255));
-        app_name.setText("iLib");
-        Menu.add(app_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, -1, -1));
+        app_name.setText("LibreriaISPC");
+        Menu.add(app_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, -1, -1));
 
         jSeparator1.setPreferredSize(new java.awt.Dimension(50, 5));
         Menu.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 190, 20));
 
         Background.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 640));
 
-        Header.setBackground(new java.awt.Color(25, 118, 210));
+        Header.setBackground(new java.awt.Color(108, 11, 166));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -316,7 +316,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         red_squr.setBackground(new java.awt.Color(255, 255, 255));
-        red_squr.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        red_squr.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         red_squr.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 red_squrMouseEntered(evt);
@@ -333,7 +333,7 @@ public class Dashboard extends javax.swing.JFrame {
         exit.setForeground(new java.awt.Color(102, 102, 102));
         exit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         exit.setText("X");
-        exit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        exit.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         exit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 exitMouseEntered(evt);
@@ -373,7 +373,7 @@ public class Dashboard extends javax.swing.JFrame {
         Background.add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, -1));
 
         slogan.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        slogan.setText("We ♥  the reading!");
+        slogan.setText("ProyectoGDB-ISPC");
         Background.add(slogan, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 190, 30));
 
         content.setBackground(new java.awt.Color(255, 255, 255));
@@ -382,14 +382,14 @@ public class Dashboard extends javax.swing.JFrame {
         content.setLayout(contentLayout);
         contentLayout.setHorizontalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 750, Short.MAX_VALUE)
+            .addGap(0, 740, Short.MAX_VALUE)
         );
         contentLayout.setVerticalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 430, Short.MAX_VALUE)
         );
 
-        Background.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 750, 430));
+        Background.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 740, 430));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -623,10 +623,10 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_exitMouseExited
 
     void setColor(JPanel panel){
-        panel.setBackground(new Color(21,101,192));
+        panel.setBackground(new Color(98,8,152));
     }
     void resetColor(JPanel panel){
-        panel.setBackground(new Color(18,90,173));
+        panel.setBackground(new Color(125,11,193));
     }
     /**
      * @param args the command line arguments
