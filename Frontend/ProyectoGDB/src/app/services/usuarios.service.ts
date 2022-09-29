@@ -25,4 +25,18 @@ export class UsuariosService {
   {
     return this.http.put(this.url+'/'+id, Registro);
   }
+
 }
+
+  export interface Registro{
+    'DNI':number;
+    'nombre':string;
+    'apellido':string;
+    'email':string;
+    'password':string;
+    'telefono':number;
+    'domicilio':string;
+    'fecha_nacimiento':Date;
+    'id_TipoUsuario':number
+  }
+
