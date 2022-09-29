@@ -1,195 +1,125 @@
-CREATE DATABASE  IF NOT EXISTS `proyectogdb` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `proyectogdb`;
--- MySQL dump 10.13  Distrib 8.0.26, for Win64 (x86_64)
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost    Database: proyectogdb
--- ------------------------------------------------------
--- Server version	8.0.26
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 29-09-2022 a las 03:42:33
+-- Versión del servidor: 8.0.26
+-- Versión de PHP: 8.0.9
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Table structure for table `bibliotecario`
+-- Base de datos: `biblioteca`
 --
 
-DROP TABLE IF EXISTS `bibliotecario`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `bibliotecario` (
-  `id_bibliotecario` int NOT NULL AUTO_INCREMENT,
-  `antiguedad` varchar(50) DEFAULT NULL,
-  `email` varchar(128) DEFAULT NULL,
-  PRIMARY KEY (`id_bibliotecario`)
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `categorialibro`
+--
+
+CREATE TABLE `categorialibro` (
+  `id_CategoriaLibro` int NOT NULL,
+  `CategoriaLibro` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `bibliotecario`
+-- Estructura de tabla para la tabla `copia`
 --
 
-LOCK TABLES `bibliotecario` WRITE;
-/*!40000 ALTER TABLE `bibliotecario` DISABLE KEYS */;
-/*!40000 ALTER TABLE `bibliotecario` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `cliente`
---
-
-DROP TABLE IF EXISTS `cliente`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `cliente` (
-  `id_cliente` int NOT NULL AUTO_INCREMENT,
-  `estado_suscripcioon` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id_cliente`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `cliente`
---
-
-LOCK TABLES `cliente` WRITE;
-/*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
-/*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `copia`
---
-
-DROP TABLE IF EXISTS `copia`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `copia` (
-  `id_copia` int NOT NULL AUTO_INCREMENT,
+  `id_copia` int NOT NULL,
   `estado_copia` varchar(50) NOT NULL,
   `cantidad_copia` varchar(45) DEFAULT NULL,
-  `ISBN` varchar(45) NOT NULL,
-  PRIMARY KEY (`id_copia`),
-  KEY `ISBN_idx` (`ISBN`),
-  CONSTRAINT `ISBN` FOREIGN KEY (`ISBN`) REFERENCES `libro` (`ISBN`)
+  `ISBN` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `copia`
+-- Estructura de tabla para la tabla `formatolibro`
 --
 
-LOCK TABLES `copia` WRITE;
-/*!40000 ALTER TABLE `copia` DISABLE KEYS */;
-/*!40000 ALTER TABLE `copia` ENABLE KEYS */;
-UNLOCK TABLES;
+CREATE TABLE `formatolibro` (
+  `id_FormatoLibro` int NOT NULL,
+  `FormatoLibro` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `libro`
+-- Estructura de tabla para la tabla `libro`
 --
 
-DROP TABLE IF EXISTS `libro`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `libro` (
   `ISBN` varchar(20) NOT NULL,
   `titulo` varchar(100) NOT NULL,
   `autor` varchar(100) NOT NULL,
   `fecha_publicacion` date DEFAULT NULL,
-  `genero` varchar(100) DEFAULT NULL,
   `editorial` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`ISBN`)
+  `id_CategoriaLibro` int DEFAULT NULL,
+  `id_FormatoLibro` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `libro`
+-- Estructura de tabla para la tabla `prestamo`
 --
 
-LOCK TABLES `libro` WRITE;
-/*!40000 ALTER TABLE `libro` DISABLE KEYS */;
-/*!40000 ALTER TABLE `libro` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `prestamo`
---
-
-DROP TABLE IF EXISTS `prestamo`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `prestamo` (
-  `nro_prestamo` int NOT NULL AUTO_INCREMENT,
+  `nro_prestamo` int NOT NULL,
   `id_copia` int DEFAULT NULL,
   `fecha_prestamo` date NOT NULL,
   `tarifa_asociada` varchar(45) DEFAULT NULL,
   `fecha_devolucion` date NOT NULL,
   `fecha_renovacion` date DEFAULT NULL,
-  `id_cliente` int DEFAULT NULL,
-  PRIMARY KEY (`nro_prestamo`),
-  KEY `id_copia_idx` (`id_copia`),
-  KEY `id_cliente_idx` (`id_cliente`),
-  CONSTRAINT `id_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`),
-  CONSTRAINT `id_copia` FOREIGN KEY (`id_copia`) REFERENCES `copia` (`id_copia`)
+  `id_cliente` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `prestamo`
+-- Estructura de tabla para la tabla `reserva`
 --
 
-LOCK TABLES `prestamo` WRITE;
-/*!40000 ALTER TABLE `prestamo` DISABLE KEYS */;
-/*!40000 ALTER TABLE `prestamo` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `reserva`
---
-
-DROP TABLE IF EXISTS `reserva`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `reserva` (
-  `nro_reserva` int NOT NULL AUTO_INCREMENT,
+  `nro_reserva` int NOT NULL,
   `fecha_reserva` date NOT NULL,
   `id_cliente` int DEFAULT NULL,
-  `id_copia` int DEFAULT NULL,
-  PRIMARY KEY (`nro_reserva`),
-  KEY `id_cliente_idx` (`id_cliente`),
-  KEY `id_copia_reserva_idx` (`id_copia`),
-  CONSTRAINT `id_cliente_reserva` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`),
-  CONSTRAINT `id_copia_reserva` FOREIGN KEY (`id_copia`) REFERENCES `copia` (`id_copia`)
+  `id_copia` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `reserva`
+-- Estructura de tabla para la tabla `tipousuario`
 --
 
-LOCK TABLES `reserva` WRITE;
-/*!40000 ALTER TABLE `reserva` DISABLE KEYS */;
-/*!40000 ALTER TABLE `reserva` ENABLE KEYS */;
-UNLOCK TABLES;
+CREATE TABLE `tipousuario` (
+  `id_tipoUsuario` int NOT NULL,
+  `tipoUsuario` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `usuario`
+-- Estructura de tabla para la tabla `usuario`
 --
 
-DROP TABLE IF EXISTS `usuario`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `usuario` (
   `DNI` int NOT NULL,
-  `id_cliente` int DEFAULT NULL,
-  `id_bibliotecario` int DEFAULT NULL,
   `nombre` varchar(100) NOT NULL,
   `apellido` varchar(100) NOT NULL,
   `email` varchar(200) NOT NULL,
@@ -197,30 +127,147 @@ CREATE TABLE `usuario` (
   `telefono` int DEFAULT NULL,
   `domicilio` varchar(200) DEFAULT NULL,
   `fecha_nacimiento` date NOT NULL,
-  PRIMARY KEY (`DNI`),
-  KEY `id_cliete_usuairo_idx` (`id_cliente`),
-  KEY `id_bibliotecario_usuario_idx` (`id_bibliotecario`),
-  CONSTRAINT `id_bibliotecario_usuario` FOREIGN KEY (`id_bibliotecario`) REFERENCES `bibliotecario` (`id_bibliotecario`),
-  CONSTRAINT `id_cliente_usuairo` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`)
+  `id_TipoUsuario` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `usuario`
+-- Índices para tablas volcadas
 --
 
-LOCK TABLES `usuario` WRITE;
-/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+--
+-- Indices de la tabla `categorialibro`
+--
+ALTER TABLE `categorialibro`
+  ADD PRIMARY KEY (`id_CategoriaLibro`);
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+--
+-- Indices de la tabla `copia`
+--
+ALTER TABLE `copia`
+  ADD PRIMARY KEY (`id_copia`),
+  ADD KEY `ISBN_idx` (`ISBN`);
+
+--
+-- Indices de la tabla `formatolibro`
+--
+ALTER TABLE `formatolibro`
+  ADD PRIMARY KEY (`id_FormatoLibro`);
+
+--
+-- Indices de la tabla `libro`
+--
+ALTER TABLE `libro`
+  ADD PRIMARY KEY (`ISBN`),
+  ADD KEY `id_CategoriaLibro` (`id_CategoriaLibro`),
+  ADD KEY `id_FormatoLibro` (`id_FormatoLibro`);
+
+--
+-- Indices de la tabla `prestamo`
+--
+ALTER TABLE `prestamo`
+  ADD PRIMARY KEY (`nro_prestamo`),
+  ADD KEY `id_copia_idx` (`id_copia`),
+  ADD KEY `id_cliente_idx` (`id_cliente`);
+
+--
+-- Indices de la tabla `reserva`
+--
+ALTER TABLE `reserva`
+  ADD PRIMARY KEY (`nro_reserva`),
+  ADD KEY `id_cliente_idx` (`id_cliente`),
+  ADD KEY `id_copia_reserva_idx` (`id_copia`);
+
+--
+-- Indices de la tabla `tipousuario`
+--
+ALTER TABLE `tipousuario`
+  ADD PRIMARY KEY (`id_tipoUsuario`);
+
+--
+-- Indices de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`DNI`),
+  ADD KEY `id_TipoUsuario` (`id_TipoUsuario`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `categorialibro`
+--
+ALTER TABLE `categorialibro`
+  MODIFY `id_CategoriaLibro` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de la tabla `copia`
+--
+ALTER TABLE `copia`
+  MODIFY `id_copia` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `formatolibro`
+--
+ALTER TABLE `formatolibro`
+  MODIFY `id_FormatoLibro` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `prestamo`
+--
+ALTER TABLE `prestamo`
+  MODIFY `nro_prestamo` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `reserva`
+--
+ALTER TABLE `reserva`
+  MODIFY `nro_reserva` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `tipousuario`
+--
+ALTER TABLE `tipousuario`
+  MODIFY `id_tipoUsuario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `copia`
+--
+ALTER TABLE `copia`
+  ADD CONSTRAINT `ISBN` FOREIGN KEY (`ISBN`) REFERENCES `libro` (`ISBN`);
+
+--
+-- Filtros para la tabla `libro`
+--
+ALTER TABLE `libro`
+  ADD CONSTRAINT `id_CategoriaLibro` FOREIGN KEY (`id_CategoriaLibro`) REFERENCES `categorialibro` (`id_CategoriaLibro`),
+  ADD CONSTRAINT `id_FormatoLibro` FOREIGN KEY (`id_FormatoLibro`) REFERENCES `formatolibro` (`id_FormatoLibro`);
+
+--
+-- Filtros para la tabla `prestamo`
+--
+ALTER TABLE `prestamo`
+  ADD CONSTRAINT `id_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`),
+  ADD CONSTRAINT `id_copia` FOREIGN KEY (`id_copia`) REFERENCES `copia` (`id_copia`);
+
+--
+-- Filtros para la tabla `reserva`
+--
+ALTER TABLE `reserva`
+  ADD CONSTRAINT `id_cliente_reserva` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`),
+  ADD CONSTRAINT `id_copia_reserva` FOREIGN KEY (`id_copia`) REFERENCES `copia` (`id_copia`);
+
+--
+-- Filtros para la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  ADD CONSTRAINT `id_TipoUsuario` FOREIGN KEY (`id_TipoUsuario`) REFERENCES `tipousuario` (`id_tipoUsuario`);
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2022-09-27 20:15:26
