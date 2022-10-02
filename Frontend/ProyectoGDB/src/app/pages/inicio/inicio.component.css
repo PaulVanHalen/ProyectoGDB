@@ -9,6 +9,7 @@ main{
 .texto{
   font-size: xx-large;
   letter-spacing: 4px;
+  max-width: 450px;
 }
 
 img{

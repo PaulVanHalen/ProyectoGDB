@@ -13,6 +13,10 @@ import { UsuariosService } from './services/usuarios.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { IngresarComponent } from './pages/ingresar/ingresar.component';
+import { AngularFireModule} from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 const rutas:Routes=[];
 
@@ -27,6 +31,9 @@ const rutas:Routes=[];
     PagesModule,
     RouterModule.forRoot(rutas),
     HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(),
   ],
   providers: [UsuariosService],
   bootstrap: [AppComponent]

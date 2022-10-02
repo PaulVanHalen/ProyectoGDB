@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ReactiveFormsModule, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { AngularFireAuth } from '@angular/fire/compat/auth'
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -10,7 +13,13 @@ export class RegistroComponent implements OnInit {
 
   RegistroForm!: FormGroup;
   submitted = false;
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder, 
+    private afAuth: AngularFireAuth, 
+    private toastr: ToastrService, 
+    private router:Router,
+    ) {
+
     this.createForm();
   }
     
@@ -62,11 +71,33 @@ export class RegistroComponent implements OnInit {
     }
                             
     onSubmit() {
+      /*GUARDO LOS VARIABLES DEL FORMULARIO QUE ME SERVIRAN PARA EL LOGIN*/
+      const email = this.RegistroForm.value.email;
+      const password = this.RegistroForm.value.password;
+      const confirmarPassword = this.RegistroForm.value.confirmarPassword;
+
+      if (password !== confirmarPassword) {
+        this.toastr.error('Las contraseñas deben ser las mismas','Error');
+        return;
+      }
+
+      this.afAuth
+      .createUserWithEmailAndPassword(email,password)
+      .then(user => {
+        this.toastr.success('Usuario registrado con exito','  Registro exitoso');
+        this.router.navigate(['/ingresar']);
+        console.log(user);
+      })
+      .catch((error)=>{
+        console.log(error);
+        this.toastr.error(this.firebaseError(error.code),'Error')
+      })
+
       this.submitted = true;
        if (this.RegistroForm.invalid) {
         return;
         }
-          }
+      }
           
   get nombre() { return this.RegistroForm.get('nombre') }
   get apellido() { return this.RegistroForm.get('apellido') }
@@ -82,7 +113,19 @@ export class RegistroComponent implements OnInit {
 
   ngOnInit() {}                               
   
+  firebaseError(code:string){
+    switch (code) {
+      case 'auth/email-already-in-use':
+        return 'El usuario ya existe, ingrese otro email';
+      case 'auth/weak-password':
+        return 'La contraseña es debil, minimo de 8 caracteres';
+      case 'auth/invalid-email':
+        return 'Correo invalido'
     
+      default:
+        return 'Error desconocido' 
+    }
+  }
 
     
     
