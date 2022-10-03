@@ -3,6 +3,7 @@ import {ReactiveFormsModule, FormBuilder, FormGroup, Validators} from '@angular/
 import { AngularFireAuth } from '@angular/fire/compat/auth'
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { FirebaseCodeErrorService } from 'src/app/services/firebase-code-error.service';
 
 @Component({
   selector: 'app-registro',
@@ -18,6 +19,7 @@ export class RegistroComponent implements OnInit {
     private afAuth: AngularFireAuth, 
     private toastr: ToastrService, 
     private router:Router,
+    private firebaseError: FirebaseCodeErrorService
     ) {
 
     this.createForm();
@@ -90,7 +92,7 @@ export class RegistroComponent implements OnInit {
       })
       .catch((error)=>{
         console.log(error);
-        this.toastr.error(this.firebaseError(error.code),'Error')
+        this.toastr.error(this.firebaseError.codeError(error.code),'Error')
       })
 
       this.submitted = true;
@@ -113,19 +115,7 @@ export class RegistroComponent implements OnInit {
 
   ngOnInit() {}                               
   
-  firebaseError(code:string){
-    switch (code) {
-      case 'auth/email-already-in-use':
-        return 'El usuario ya existe, ingrese otro email';
-      case 'auth/weak-password':
-        return 'La contraseña es debil, minimo de 8 caracteres';
-      case 'auth/invalid-email':
-        return 'Correo invalido'
-    
-      default:
-        return 'Error desconocido' 
-    }
-  }
+  
 
     
     

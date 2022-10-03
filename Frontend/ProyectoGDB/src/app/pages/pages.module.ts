@@ -5,6 +5,7 @@ import { LibrosComponent } from './libros/libros.component';
 import { RegistroComponent } from './registro/registro.component';
 import { IngresarComponent } from './ingresar/ingresar.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     LibrosComponent,
     RegistroComponent,
     IngresarComponent,
+    DashboardComponent,
   ],
   imports: [
     CommonModule,

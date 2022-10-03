@@ -9,7 +9,6 @@ import { LayoutsModule } from './layouts/layouts.module';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { LibrosComponent } from './pages/libros/libros.component';
 import { PagesModule } from './pages/pages.module';
-import { UsuariosService } from './services/usuarios.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { IngresarComponent } from './pages/ingresar/ingresar.component';
@@ -35,7 +34,7 @@ const rutas:Routes=[];
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(),
   ],
-  providers: [UsuariosService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
