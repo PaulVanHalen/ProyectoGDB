@@ -1,17 +1,17 @@
 <img src="../../../assets/images/key.png" alt="login">
 <div class="contenedor">
   <h1>Iniciar Sesion</h1>
-  <form>
+  <form [formGroup]="loginUsuario" (submit)="login()">
     <div class="form-floating mb-3">
-      <input type="email" class="form-control" placeholder="name@example.com">
+      <input type="email" formControlName="email" class="form-control" placeholder="name@example.com">
       <label>Correo Electronico</label>
     </div>
     <div class="form-floating mb-3">
-      <input type="password" class="form-control" placeholder="Password">
+      <input type="password" formControlName="password" class="form-control" placeholder="Password">
       <label>Contraseña</label>
     </div>
     <div class="d-grid gap-2">
-      <button class="btn btn-primary btn-lg" type="button">Ingresar</button>
+      <button class="btn btn-primary btn-lg" type="submit">Ingresar</button>
     </div>
     <p class="mt-3">No tenes una cuenta? <a href="../registro/registro.component.html">Registrarse</a></p>
   </form>
