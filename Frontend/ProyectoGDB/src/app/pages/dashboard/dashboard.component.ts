@@ -15,7 +15,7 @@ export class DashboardComponent implements OnInit {
   constructor(
     private afAuth: AngularFireAuth,
     private router: Router,
-    ) {}
+   ) {}
 
   ngOnInit(): void {
     this.afAuth.currentUser.then(user=>{

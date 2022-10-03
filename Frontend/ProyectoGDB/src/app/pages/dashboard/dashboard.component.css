@@ -21,3 +21,8 @@ a:hover{
   font-weight: 600;
   text-shadow: 0.5px 0.5px #5a5757;
 }
+
+.lead{
+  font-size: x-large;
+  font-weight: 700;
+}
