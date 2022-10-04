@@ -1,0 +1,3 @@
+Esta carpeta de Spring inicialmente fue diseñada para trabajarla pero decidimos buscar otra alternativa.
+Aún así queda por si la editamos o trabajamos posteriormente.
+Por esa razon no fue eliminada.
